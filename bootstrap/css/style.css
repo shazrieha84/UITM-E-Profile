@@ -1,0 +1,29 @@
+.title {
+    font-family: "Monomaniac One", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+    color:transparent;
+    background: linear-gradient(
+        135deg,rgb(10, 64, 138), #0697f1b5, #69a0f1
+    );
+    background-size: 500px 100%;
+    background-clip: text;
+  }
+
+.fadeInOnScroll {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .scroll-trigger {
+    opacity: 0;
+    animation: fadeInOnScroll 1s forwards;
+  }
+  

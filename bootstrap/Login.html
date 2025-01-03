@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif; /* Global font-family */
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: url('img/konvo.jpg') center center no-repeat;
+            background-size: cover; /* Make sure the image covers the entire background */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        .form-section {
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-section input[type="text"], .form-section input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-section .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-section .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .social-buttons button {
+            margin-top: 10px;
+            border: none;
+            background: none;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px; /* Fixed height for buttons */
+            width: 100%; /* Ensure buttons take up full width */
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            font-size: 14px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .text-bg-primary {
+            background-color: #3b5998;
+        }
+
+        .text-bg-info {
+            background-color: #1da1f2;
+        }
+
+        .text-bg-danger {
+            background-color: #db4437;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup p {
+            margin-bottom: 10px;
+            color: green;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const popup = document.querySelector('.popup');
+            popup.classList.add('active');
+        }
+
+        function closePopup() {
+            const popup = document.querySelector('.popup');
+            popup.classList.remove('active');
+        }
+
+        function loginWithFacebook() {
+            // Placeholder for Facebook login functionality
+            window.location.href = 'https://www.facebook.com/login';
+        }
+
+        function loginWithTwitter() {
+            // Placeholder for Twitter login functionality
+            window.location.href = 'https://twitter.com/login';
+        }
+
+        function loginWithGoogle() {
+            // Placeholder for Google login functionality
+            window.location.href = 'https://accounts.google.com/ServiceLogin';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>LOGIN</h2>
+            <form onsubmit="handleLogin(event)">
+                <input type="text" placeholder="Username or email" required>
+                <input type="password" placeholder="Password" required>
+                <button class="login-btn">Login</button>
+                <div style="margin: 20px 0; text-align: center;">or</div>
+                <div class="social-buttons">
+                    <button class="facebook" onclick="loginWithFacebook()">
+                        <span class="badge text-bg-primary py-2 px-2">
+                            Login with Facebook 
+                        </span>
+                    </button>
+                    <button class="twitter" onclick="loginWithTwitter()">
+                        <span class="badge text-bg-info py-2 px-2">
+                            Login with Twitter 
+                        </span>
+                    </button>
+                    <button class="google" onclick="loginWithGoogle()">
+                        <span class="badge text-bg-danger py-2 px-2">
+                            Login with Google 
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="popup">
+        <p>The user successfully logged in.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</body>
+</html>
